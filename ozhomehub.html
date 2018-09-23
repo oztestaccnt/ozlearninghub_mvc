@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Northwind</title>
+
+
+    <link href="css/MyStyles.css" type="text/css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/jquery-ui.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet" type="text/css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--Fun fonts-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" id="navbar">
+        <!--HomeBtnOnTheHeader-->
+        <a href="#" class="navbar-brand">Northwind</a>
+
+        <!--HamburgerMenu-->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-menu">
+                    <!--Reference to the id for the collapse bar-->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!--Links on the Header-->
+            <div class="collapse navbar-collapse topnav-left" id="collapse-menu">
+
+                <!--Bellow will makes links to collapse with window resize-->
+                <ul class="nav navbar-nav navbar-left">
+                    <!--DropDown: it requires JQuery script-->
+                    <li> 
+                        <a class="dropdown-toggle fas fa-book" data-toggle="dropdown" href="#"> Products<b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="https://getbootstrap.com/docs/3.3/css/">Browse Categories</a></li>
+                            <li><a href="https://themes.getbootstrap.com/">Product Search</a></li>
+                            <li class="divider"></li>
+                            <li><a href="ErrorPage.html">Current Discounts</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle fas fa-user" data-toggle="dropdown" href="#"> Customers<b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Sign In</a></li>
+                            <li><a href="#">Register</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Your Account</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle fas fa-chalkboard" data-toggle="dropdown" href="#"> My Lesson<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ozhomehub.html">Homework</a></li>
+                            <li><a href="Lessons.html">Lesson 1-2</a></li>
+                            <li> <a href="#">Lesson 2</a></li> 
+
+                        </ul>
+                    </li>
+
+                    <!--ProductSearch searchBox-->
+
+                    <li class="form-group hidden-xs">
+                        <input type="text" class="form-control" data-toggle="collapse" data-target="bs-navbar-collapse" placeholder="Product Search">
+                    </li>
+
+                    <!--Search Button-->
+                    <li><button type="button" class="btn btn-default navbar-btn hidden-xs">Search</button></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right glyphicon1">
+                    <!--Sign Out-->
+                   <!-- <li class="glyphicon glyphicon-log-out" style="color:mintcream; padding-top:16px; padding-left:7px"></li>-->
+                    <li class="SignOutBtn"><a href="#" class="fas fa-sign-out-alt">Sign Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="jumbo">
+        <div class="jumbotron">
+            <!--Used the following: https://css3gen.com/text-shadow/ -->
+            <h1 style="text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);">N<i class="far fa-compass" style="font-size:45px"></i>rthwind</h1>
+            <p>
+                Best price and high quality guaranteed!<br />
+                Check out our featured discounts below!
+            </p>
+            <button class="btn btn-primary">Place Your Order >></button>
+        </div>
+
+        <!--Grid System-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-3">
+                    <h3>Tis the Seasoning</h3>
+                    <hr />
+                    <p>Order today to save 25% on Chef Anton's Italian seassoning. You don't want to make Chef's mad, do you? </p>
+                    <br />
+                    <p><i>Discount Expires: 12/12/2018</i></p>
+                    <a href="#" class="fas fa-hand-point-right"> Discount Code</a>
+                </div>
+
+                <div class="col-md-4 col-md-3 col-sm-3 ">
+                    <h3>Go Green</h3>
+                    <hr />
+                    <p>Get 15% off your next purchase when you Opt Out from you monthly statements!</p>
+                    <br />
+                    <p><i>Discount Expires: 12/12/2018</i></p>
+                    <a href="#" class="fas fa-hand-point-right"> Discount Code</a>
+                </div>
+
+                <div class="col-md-4 col-md-3 col-sm-3">
+                    <h3>Half Price </h3>
+                    <hr />
+                    <p>This month only! Our special iteam will be 50% off. Do not miss it!</p>
+                    <br />  
+                    <p><i>Discount Expires: 12/12/2018</i></p>
+                    <a href="#" class="fas fa-hand-point-right"> Discount Code</a>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    This is a modal<br />
+
+    <!--<nav class="navbar navbar-inverse navbar-fixed-bottom na">
+        <div class="container">
+            <p class="navbar-text">MVC<span class="glyphicon glyphicon-apple"></span></p>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-area">Sing In</button>
+
+
+            <button type="button" class="btn btn-danger">Sing Up</button>
+            <button type="button" class="btn arrow">TEST!</button>
+        </div>
+    </nav>-->
+
+    <div id="modal-area" class="modal">This is a modal</div>
+
+
+</body>
+</html>

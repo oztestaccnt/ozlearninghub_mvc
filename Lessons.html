@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Northwind</title>
+
+
+    <link href="css/MyStyles.css" type="text/css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/jquery-ui.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet" />-->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <script>
+        $(function () {
+            // attach datepicker to textbox
+            $('#birthday').datepicker();
+            $('.ball').draggable();
+            $('h3').addClass('animated ' + jump());
+            $('#datepicker').datepicker();
+
+            $('.bx').each(function () {
+                $(this).is(':checked') ?
+                    $('#' + $(this).attr('id') + 'Img').css('visibility', 'visible') : //true
+                    $('#' + $(this).attr('id') + 'Img').css('visibility', 'hidden') //false: if this will be written- baloons will be hidden and next functions below will not work
+            });
+
+            $('.bx').change(function () {
+                $('#' + $(this).attr('id') + 'Img').css('visibility', 'visible')
+                $(this).is(':checked') ?
+                    $('#' + $(this).attr('id') + 'Img').removeClass().addClass('animated bounceInDown') :
+                    $('#' + $(this).attr('id') + 'Img').addClass('animated bounceOutUp')
+            });
+
+            function jump() {
+                var animation = ['bounce', 'pulse', 'shake', 'swing', 'tada', 'rubberBand']
+                var random = Math.floor(Math.random() * 5);
+                //return arrayCounts(animation, random);
+                return animation[random];
+            }
+
+            //$('#rb').is(':checked') - for a single use
+
+        });
+    </script>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" id="navbar">
+        <!--HomeBtnOnTheHeader-->
+        <a href="#" class="navbar-brand">Northwind</a>
+
+        <!--HamburgerMenu-->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-menu">
+                    <!--Reference to the id for the collapse bar-->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!--Links on the Header-->
+            <div class="collapse navbar-collapse topnav-left" id="collapse-menu">
+
+                <!--Bellow will makes links to collapse with window resize-->
+                <ul class="nav navbar-nav navbar-left">
+                    <!--DropDown: it requires JQuery script-->
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products<b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="https://getbootstrap.com/docs/3.3/css/">Browse Categories</a></li>
+                            <li><a href="https://themes.getbootstrap.com/">Product Search</a></li>
+                            <li class="divider"></li>
+                            <li><a href="ErrorPage.html">Current Discounts</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Customers<b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Sign In</a></li>
+                            <li><a href="#">Register</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Your Account</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> My Lesson<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ozhomehub.html">Homework</a></li>
+                            <li><a href="Lessons.html">iLesson 1-2</a></li>
+
+                        </ul>
+                    </li>
+
+                    <!--ProductSearch searchBox-->
+
+                    <li class="form-group hidden-xs">
+                        <input type="text" class="form-control" data-toggle="collapse" data-target="bs-navbar-collapse" placeholder="Product Search">
+                    </li>
+
+                    <!--Search Button-->
+                    <li><button type="button" class="btn btn-default navbar-btn hidden-xs">Search</button></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right glyphicon1">
+                    <!--Sign Out-->
+                    <li class="SignOutBtn"><a href="#">Sign Out</a></li>
+                    <!--Glyphicon
+                        <li class="glyphicon glyphicon-log-out" style="color:mintcream; padding-top:16px;"></li>
+                     -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="animated bounce">Happy Birthday!</h1>
+
+        <form role="form">
+            <div class="row">
+                <!--Data Entry-->
+                <div class="col-sm-6">
+                    <div class="form-group animated bounce">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Date</label>
+                        <input type="text" id="datepicker" class="form-control" />
+                    </div>
+
+
+                    <!--baloon choice-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <strong>Select YourFavorite Baloon</strong>
+                            </h3>
+                        </div>
+
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="bx" id="rb" />red</label>
+                        </div>
+                        <div class="checkbox">
+                            <label> <input type="checkbox" class="bx" id="gb" />blue</label>
+                        </div>
+                        <div class="checkbox">
+                            <label> <input type="checkbox" class="bx" id="bb" />green</label>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-default">Submit</button>
+                </div>
+                <!--Baloon-->
+                <div class="col-sm-6">
+                    <img src="Images/red.png" alt="red" class="ball" id="rbImg" />
+                    <img src="Images/blue.png" alt="blue" class="ball" id="bbImg" />
+                    <img src="Images/blue_green.png" alt="green" class="ball" id="gbImg" />
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+
+
+
+
+
+    <div class="navbar-fixed-bottom">
+        <span class="copy">&copy; Copyright 2018 OZ</span>
+    </div>
+
+</body>
+</html>
